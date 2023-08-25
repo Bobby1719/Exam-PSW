@@ -1,0 +1,43 @@
+spring:
+  applicaton:
+    name: ProgettoPsw
+  datasource:
+    username: 'postgres'
+    password: 'michele0017'
+    url: jdbc:postgresql://localhost:5432/progetto
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate :
+        jdbc:
+          lob:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwt-set-uri: http://localhost:8080/realms/StoreAuth/protocol/openid-connect/certs
+          issuer-uri: http://localhost:8080/realms/StoreAuth
+
+server:
+  compression:
+    enabled: 'true'
+  port: 8081
+
+keycloak:
+  realm: StoreAuth
+  auth-server-url: http://localhost:8080/
+  ssl-required: external
+  resource: StoreClient
+  use-resource-role-mappings: true
+  bearer-only: true
+
+auth-properties:
+  client-id: StoreClient
+  client-secret: PLKQ0fLDWcPZeCZ7ICsaUnmuiMXNjNen
+  usernameadmin: admin
+  passwordadmin: admin
+  role: admin

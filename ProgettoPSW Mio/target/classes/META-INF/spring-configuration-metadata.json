@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "auth-properties",
+      "type": "com.realm.myrealm.configurations.AuthConfig",
+      "sourceType": "com.realm.myrealm.configurations.AuthConfig"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
